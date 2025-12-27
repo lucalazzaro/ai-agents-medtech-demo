@@ -13,8 +13,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://ai-agents-medtech-demo.vercel.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -37,6 +38,9 @@ def health():
 def list_scenarios():
     return {"scenarios": list(SCENARIOS.keys())}
 
+@app.get("/")
+def root():
+    return {"ok": True, "service": "ai-agents-medtech-demo"}
 
 @app.post("/run")
 async def run(req: RunRequest):
