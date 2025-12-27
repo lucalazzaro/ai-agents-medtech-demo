@@ -1,0 +1,21 @@
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- Environment files ---
+.env
+.env.local
+
+# --- Node / Next ---
+node_modules/
+.next/
+out/
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+
+# --- Logs ---
+*.log
